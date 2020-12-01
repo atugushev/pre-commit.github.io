@@ -1,0 +1,2736 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="build/main.css">
+        <link rel="icon" href="favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>pre-commit</title>
+    </head>
+    <body class="page-hooks" data-spy="scroll" data-target=".pc-sidebar">
+        <header class="navbar navbar-default pc-nav" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".pc-navbar-collapse">
+                        <span class="sr-only">Toggle navigtaion</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/" class="navbar-brand pc-navbar-brand">
+                        <i class="logo"></i>
+                    </a>
+                </div>
+                <nav class="navbar-collapse pc-navbar pc-navbar-collapse collapse" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Documentation</a></li>
+                        <li><a href="hooks.html">Supported hooks</a></li>
+                        <li><a href="https://github.com/pre-commit/demo-repo#readme">Demo</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="https://github.com/pre-commit/pre-commit" class="btn btn-default">Download on GitHub</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="top-shelf">
+            <div class="container">
+                <img class="pc-logo-top-shelf hidden-xs hidden-sm" src="logo-top-shelf.png">
+                <h1>
+                    <a href="https://github.com/pre-commit/pre-commit">
+                        pre-commit
+                    </a>
+                </h1>
+                <p>A framework for managing and maintaining multi-language <span class="nowrap">pre-commit</span> hooks.</p>
+           <p><a href="https://dev.azure.com/asottile/asottile/_build/latest?definitionId=21&branchName=master"><img src="https://dev.azure.com/asottile/asottile/_apis/build/status/pre-commit.pre-commit?branchName=master" alt="Build Status" style="max-width:100%;"></a>
+<a href="https://dev.azure.com/asottile/asottile/_build/latest?definitionId=21&branchName=master"><img src="https://img.shields.io/azure-devops/coverage/asottile/asottile/21/master.svg" alt="Azure DevOps Coverage" style="max-width:100%;"></a>
+<a href="https://results.pre-commit.ci/latest/github/pre-commit/pre-commit/master"><img src="https://results.pre-commit.ci/badge/github/pre-commit/pre-commit/master.svg" alt="pre-commit.ci status" style="max-width:100%;"></a></p>
+            <p><iframe src="https://ghbtns.com/github-btn.html?user=pre-commit&amp;repo=pre-commit&amp;type=watch&amp;count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="104px" height="20"></iframe>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://pre-commit.com" data-text="pre-commit - A framework for managing and maintaining multi-language pre-commit hooks.">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
+        </div>
+        </div>
+        <div class="container pc-main-content">
+            
+
+<div class="page-header"><h1>Supported hooks</h1></div>
+
+<p>
+To add to this list, fork <a href="https://github.com/pre-commit/pre-commit.com">this repository</a>.
+</p>
+
+<p>
+Also available in <a href="/all-hooks.json">json</a>.
+</p>
+
+    <h3>
+        <a href="https://github.com/pre-commit/pre-commit-hooks" target="_blank">
+            github.com/pre-commit/pre-commit-hooks
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>autopep8-wrapper</code>
+                    - (removed) use pre-commit/mirrors-autopep8 instead.
+            </li>
+            <li>
+                <code>check-added-large-files</code>
+                    - Prevent giant files from being committed
+            </li>
+            <li>
+                <code>check-ast</code>
+                    - Simply check whether the files parse as valid python.
+            </li>
+            <li>
+                <code>check-byte-order-marker</code>
+                    - forbid files which have a UTF-8 byte-order marker
+            </li>
+            <li>
+                <code>check-builtin-literals</code>
+                    - Require literal syntax when initializing empty or zero Python builtin types.
+            </li>
+            <li>
+                <code>check-case-conflict</code>
+                    - Check for files that would conflict in case-insensitive filesystems
+            </li>
+            <li>
+                <code>check-docstring-first</code>
+                    - Checks a common error of defining a docstring after code.
+            </li>
+            <li>
+                <code>check-executables-have-shebangs</code>
+                    - Ensures that (non-binary) executables have a shebang.
+            </li>
+            <li>
+                <code>check-json</code>
+                    - This hook checks json files for parseable syntax.
+            </li>
+            <li>
+                <code>pretty-format-json</code>
+                    - This hook sets a standard for formatting JSON files.
+            </li>
+            <li>
+                <code>check-merge-conflict</code>
+                    - Check for files that contain merge conflict strings.
+            </li>
+            <li>
+                <code>check-symlinks</code>
+                    - Checks for symlinks which do not point to anything.
+            </li>
+            <li>
+                <code>check-toml</code>
+                    - This hook checks toml files for parseable syntax.
+            </li>
+            <li>
+                <code>check-vcs-permalinks</code>
+                    - Ensures that links to vcs websites are permalinks.
+            </li>
+            <li>
+                <code>check-xml</code>
+                    - This hook checks xml files for parseable syntax.
+            </li>
+            <li>
+                <code>check-yaml</code>
+                    - This hook checks yaml files for parseable syntax.
+            </li>
+            <li>
+                <code>debug-statements</code>
+                    - Check for debugger imports and py37+ `breakpoint()` calls in python source.
+            </li>
+            <li>
+                <code>destroyed-symlinks</code>
+                    - Detects symlinks which are changed to regular files with a content of a path which that symlink was pointing to.
+            </li>
+            <li>
+                <code>detect-aws-credentials</code>
+                    - Detects *your* aws credentials from the aws cli credentials file
+            </li>
+            <li>
+                <code>detect-private-key</code>
+                    - Detects the presence of private keys
+            </li>
+            <li>
+                <code>double-quote-string-fixer</code>
+                    - This hook replaces double quoted strings with single quoted strings
+            </li>
+            <li>
+                <code>end-of-file-fixer</code>
+                    - Ensures that a file is either empty, or ends with one newline.
+            </li>
+            <li>
+                <code>file-contents-sorter</code>
+                    - Sort the lines in specified files (defaults to alphabetical). You must provide list of target files as input in your .pre-commit-config.yaml file.
+            </li>
+            <li>
+                <code>fix-byte-order-marker</code>
+                    - removes UTF-8 byte order marker
+            </li>
+            <li>
+                <code>fix-encoding-pragma</code>
+                    - Add # -*- coding: utf-8 -*- to the top of python files
+            </li>
+            <li>
+                <code>flake8</code>
+                    - (removed) use gitlab.com/pycqa/flake8 instead.
+            </li>
+            <li>
+                <code>forbid-new-submodules</code>
+                    - Prevent addition of new git submodules
+            </li>
+            <li>
+                <code>mixed-line-ending</code>
+                    - Replaces or checks mixed line ending
+            </li>
+            <li>
+                <code>name-tests-test</code>
+                    - This verifies that test files are named correctly
+            </li>
+            <li>
+                <code>no-commit-to-branch</code>
+                    - Don&#39;t commit to branch
+            </li>
+            <li>
+                <code>pyflakes</code>
+                    - (removed) use gitlab.com/pycqa/flake8 instead.
+            </li>
+            <li>
+                <code>requirements-txt-fixer</code>
+                    - Sorts entries in requirements.txt
+            </li>
+            <li>
+                <code>sort-simple-yaml</code>
+                    - Sorts simple YAML files which consist only of top-level keys, preserving comments and blocks.
+            </li>
+            <li>
+                <code>trailing-whitespace</code>
+                    - This hook trims trailing whitespace.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pre-commit/mirrors-autopep8" target="_blank">
+            github.com/pre-commit/mirrors-autopep8
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>autopep8</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pre-commit/mirrors-coffeelint" target="_blank">
+            github.com/pre-commit/mirrors-coffeelint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>coffeelint</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pre-commit/mirrors-csslint" target="_blank">
+            github.com/pre-commit/mirrors-csslint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>csslint</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pre-commit/mirrors-eslint" target="_blank">
+            github.com/pre-commit/mirrors-eslint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>eslint</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pre-commit/mirrors-fixmyjs" target="_blank">
+            github.com/pre-commit/mirrors-fixmyjs
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>fixmyjs</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pre-commit/mirrors-jshint" target="_blank">
+            github.com/pre-commit/mirrors-jshint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>jshint</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pre-commit/mirrors-mypy" target="_blank">
+            github.com/pre-commit/mirrors-mypy
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>mypy</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pre-commit/mirrors-prettier" target="_blank">
+            github.com/pre-commit/mirrors-prettier
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>prettier</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pre-commit/mirrors-puppet-lint" target="_blank">
+            github.com/pre-commit/mirrors-puppet-lint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>puppet-lint</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pre-commit/mirrors-ruby-lint" target="_blank">
+            github.com/pre-commit/mirrors-ruby-lint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>ruby-lint</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pre-commit/mirrors-scss-lint" target="_blank">
+            github.com/pre-commit/mirrors-scss-lint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>scss-lint</code>
+                    - scss_lint
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pre-commit/mirrors-yapf" target="_blank">
+            github.com/pre-commit/mirrors-yapf
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>yapf</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pre-commit/pygrep-hooks" target="_blank">
+            github.com/pre-commit/pygrep-hooks
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>python-check-blanket-noqa</code>
+                    - Enforce that `noqa` annotations always occur with specific codes
+            </li>
+            <li>
+                <code>python-check-mock-methods</code>
+                    - Prevent common mistakes of `assert mck.not_called()`, `assert mck.called_once_with(...)` and `mck.assert_called`.
+            </li>
+            <li>
+                <code>python-no-eval</code>
+                    - A quick check for the `eval()` built-in function
+            </li>
+            <li>
+                <code>python-no-log-warn</code>
+                    - A quick check for the deprecated `.warn()` method of python loggers
+            </li>
+            <li>
+                <code>python-use-type-annotations</code>
+                    - Enforce that python3.6+ type annotations are used instead of type comments
+            </li>
+            <li>
+                <code>rst-backticks</code>
+                    - Detect common mistake of using single backticks when writing rst
+            </li>
+            <li>
+                <code>rst-directive-colons</code>
+                    - Detect mistake of rst directive not ending with double colon
+            </li>
+            <li>
+                <code>rst-inline-touching-normal</code>
+                    - Detect mistake of inline code touching normal text in rst
+            </li>
+            <li>
+                <code>text-unicode-replacement-char</code>
+                    - Forbid files which have a UTF-8 Unicode replacement character
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/FalconSocial/pre-commit-mirrors-pep257" target="_blank">
+            github.com/FalconSocial/pre-commit-mirrors-pep257
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>pep257</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/FalconSocial/pre-commit-python-sorter" target="_blank">
+            github.com/FalconSocial/pre-commit-python-sorter
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>python-import-sorter</code>
+                    - This hook sorts python imports.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/guykisel/pre-commit-robotframework-tidy" target="_blank">
+            github.com/guykisel/pre-commit-robotframework-tidy
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>robotframework-tidy-wrapper</code>
+                    - Runs Robot Framework&#39;s tidy tool.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/guykisel/prospector-mirror" target="_blank">
+            github.com/guykisel/prospector-mirror
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>prospector</code>
+                    - This hook runs Prospector: https://github.com/landscapeio/prospector
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/asottile/add-trailing-comma" target="_blank">
+            github.com/asottile/add-trailing-comma
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>add-trailing-comma</code>
+                    - Automatically add trailing commas to calls and literals.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/asottile/pyupgrade" target="_blank">
+            github.com/asottile/pyupgrade
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>pyupgrade</code>
+                    - Automatically upgrade syntax for newer versions.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/asottile/reorder_python_imports" target="_blank">
+            github.com/asottile/reorder_python_imports
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>reorder-python-imports</code>
+                    - This hook reorders imports in python files.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/asottile/yesqa" target="_blank">
+            github.com/asottile/yesqa
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>yesqa</code>
+                    - Automatically remove unnecessary `# noqa` comments
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/asottile/blacken-docs" target="_blank">
+            github.com/asottile/blacken-docs
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>blacken-docs</code>
+                    - Run `black` on python code blocks in documentation files
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/asottile/dead" target="_blank">
+            github.com/asottile/dead
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>dead</code>
+                    - dead simple python dead code detection
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/asottile/setup-cfg-fmt" target="_blank">
+            github.com/asottile/setup-cfg-fmt
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>setup-cfg-fmt</code>
+                    - apply a consistent format to `setup.cfg` files
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/asottile/cheetah_lint" target="_blank">
+            github.com/asottile/cheetah_lint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>cheetah-reorder-imports</code>
+                    - This hook reorders imports in cheetah files.
+            </li>
+            <li>
+                <code>cheetah-flake</code>
+                    - Lint cheetah code using flake8 and some other checks.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/digitalpulp/pre-commit-php" target="_blank">
+            github.com/digitalpulp/pre-commit-php
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>php-lint-all</code>
+                    - Check PHP Syntax on ALL PHP staged files with user friendly messages and colors
+            </li>
+            <li>
+                <code>php-lint</code>
+                    - Runs php -l on all staged PHP files. Exits when it hits the first errored file
+            </li>
+            <li>
+                <code>php-unit</code>
+                    - Run the full php unit test. Checks which PHPUnit executable is available first and then runs it. Preference order is vendor/bin, phpunit and phpunit.phar.
+            </li>
+            <li>
+                <code>php-cs</code>
+                    - Run php codesniffer against all staged PHP files.
+            </li>
+            <li>
+                <code>php-cbf</code>
+                    - Run php codesniffer against all staged PHP files.
+            </li>
+            <li>
+                <code>php-cs-fixer</code>
+                    - Run php coding standards fixer against all staged PHP files.
+            </li>
+            <li>
+                <code>php-stan</code>
+                    - Run PHPStan against all staged PHP files.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/elidupuis/mirrors-jscs" target="_blank">
+            github.com/elidupuis/mirrors-jscs
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>jscs</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/elidupuis/mirrors-sass-lint" target="_blank">
+            github.com/elidupuis/mirrors-sass-lint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>sass-lint</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/jumanjihouse/pre-commit-hooks" target="_blank">
+            github.com/jumanjihouse/pre-commit-hooks
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>bundler-audit</code>
+                    - Check for vulnerable gem versions and insecure sources
+            </li>
+            <li>
+                <code>check-mailmap</code>
+                    - Detect if an email address needs to be added to mailmap
+            </li>
+            <li>
+                <code>fasterer</code>
+                    - Use fasterer to suggest speed improvements in Ruby
+            </li>
+            <li>
+                <code>forbid-binary</code>
+                    - Forbid binary files from being committed
+            </li>
+            <li>
+                <code>forbid-space-in-indent</code>
+                    - Forbid spaces in indentation
+            </li>
+            <li>
+                <code>git-check</code>
+                    - Use git to check for conflict markers and core.whitespace errors, respecting .gitattributes
+            </li>
+            <li>
+                <code>git-dirty</code>
+                    - Detect if git tree contains modified, staged, or untracked files
+            </li>
+            <li>
+                <code>markdownlint</code>
+                    - Check markdown files and flag style issues
+            </li>
+            <li>
+                <code>protect-first-parent</code>
+                    - Protect first parent from foxtrot merges
+            </li>
+            <li>
+                <code>reek</code>
+                    - Use reek to find ruby code smells
+            </li>
+            <li>
+                <code>require-ascii</code>
+                    - Ensure file is ascii-encoded
+            </li>
+            <li>
+                <code>rubocop</code>
+                    - Enforce Ruby style guide with rubocop and rubocop-rspec
+            </li>
+            <li>
+                <code>shellcheck</code>
+                    - Shell scripts conform to shellcheck
+            </li>
+            <li>
+                <code>script-must-have-extension</code>
+                    - Non-executable shell script filename ends in .sh
+            </li>
+            <li>
+                <code>script-must-not-have-extension</code>
+                    - Executable shell script omits the filename extension
+            </li>
+            <li>
+                <code>shfmt</code>
+                    - Check shell style with shfmt
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/jumanjihouse/pre-commit-hook-yamlfmt" target="_blank">
+            github.com/jumanjihouse/pre-commit-hook-yamlfmt
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>yamlfmt</code>
+                    - Format YAML files
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/Lucas-C/pre-commit-hooks" target="_blank">
+            github.com/Lucas-C/pre-commit-hooks
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>forbid-crlf</code>
+                    - Forbid files containing CRLF end-lines to be committed
+            </li>
+            <li>
+                <code>remove-crlf</code>
+                    - Replace CRLF end-lines by LF ones before committing
+            </li>
+            <li>
+                <code>forbid-tabs</code>
+                    - Forbid files containing tabs to be committed
+            </li>
+            <li>
+                <code>remove-tabs</code>
+                    - Replace tabs by whitespaces before committing
+            </li>
+            <li>
+                <code>insert-license</code>
+                    - Insert a short license disclaimer as a header comment in source files
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/Lucas-C/pre-commit-hooks-go" target="_blank">
+            github.com/Lucas-C/pre-commit-hooks-go
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>checkmake</code>
+                    - Makefile linter/analyzer
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/Lucas-C/pre-commit-hooks-java" target="_blank">
+            github.com/Lucas-C/pre-commit-hooks-java
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>validate-html</code>
+                    - HTML syntax validator using W3C v.Nu checker, with support for handlebars/jinja2 templates
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/Lucas-C/pre-commit-hooks-lxml" target="_blank">
+            github.com/Lucas-C/pre-commit-hooks-lxml
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>forbid-html-img-without-alt-text</code>
+                    - List every &lt;img&gt; tag without a alt= or data-ng-attr-alt= attribute
+            </li>
+            <li>
+                <code>forbid-non-std-html-attributes</code>
+                    - Detect any non-standard attribute that is not prefixed with data-
+            </li>
+            <li>
+                <code>detect-missing-css-classes</code>
+                    - Detect unused or missing CSS classes definitions, and abort if any of the later ones is found
+            </li>
+            <li>
+                <code>html-tags-blacklist</code>
+                    - Forbid some HTML tags
+            </li>
+            <li>
+                <code>html-attributes-blacklist</code>
+                    - Forbid some HTML attributes
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/Lucas-C/pre-commit-hooks-markup" target="_blank">
+            github.com/Lucas-C/pre-commit-hooks-markup
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>rst-linter</code>
+                    - Check .rst files with the same linter used by pypi.org
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/Lucas-C/pre-commit-hooks-nodejs" target="_blank">
+            github.com/Lucas-C/pre-commit-hooks-nodejs
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>htmlhint</code>
+                    - NodeJS HTML syntax linter (htmlhint)
+            </li>
+            <li>
+                <code>htmllint</code>
+                    - NodeJS HTML syntax linter (htmllint)
+            </li>
+            <li>
+                <code>dockerfile_lint</code>
+                    - Dockerfile linter
+            </li>
+            <li>
+                <code>markdown-toc</code>
+                    - Insert a table of contents in Markdown files, like a README.md
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/Lucas-C/pre-commit-hooks-safety" target="_blank">
+            github.com/Lucas-C/pre-commit-hooks-safety
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>python-safety-dependencies-check</code>
+                    - Analyze your Python requirements for known security vulnerabilities
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/chriskuehl/puppet-pre-commit-hooks" target="_blank">
+            github.com/chriskuehl/puppet-pre-commit-hooks
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>epp-validate</code>
+                    - Validate syntax of Puppet EPP templates
+            </li>
+            <li>
+                <code>erb-validate</code>
+                    - Validate syntax of Ruby ERB templates
+            </li>
+            <li>
+                <code>g10k-validate</code>
+                    - Validate syntax of Puppetfile using g10k
+            </li>
+            <li>
+                <code>puppet-lint</code>
+                    - Check Puppet manifests for stylistic problems
+            </li>
+            <li>
+                <code>puppet-validate</code>
+                    - Validate syntax of Puppet manifests
+            </li>
+            <li>
+                <code>r10k-validate</code>
+                    - Validate syntax of Puppetfile using r10k
+            </li>
+            <li>
+                <code>ruby-validate</code>
+                    - Validate syntax of ruby code
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/golangci/golangci-lint" target="_blank">
+            github.com/golangci/golangci-lint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>golangci-lint</code>
+                    - Fast linters runner for Go.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/Bahjat/pre-commit-golang" target="_blank">
+            github.com/Bahjat/pre-commit-golang
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>go-fmt-import</code>
+                    - Runs `goimport,gofmt`, requires golang
+            </li>
+            <li>
+                <code>go-vet</code>
+                    - Runs `go vet`, requires golang
+            </li>
+            <li>
+                <code>go-lint</code>
+                    - Runs `go lint`, requires golang
+            </li>
+            <li>
+                <code>go-unit-tests</code>
+                    - Runs `go test`, requires golang
+            </li>
+            <li>
+                <code>gofumpt</code>
+                    - Runs `gofumpt`, requires github.com/mvdan/gofumpt
+            </li>
+            <li>
+                <code>go-err-check</code>
+                    - Runs `errcheck`, requires github.com/kisielk/errcheck
+            </li>
+            <li>
+                <code>go-static-check</code>
+                    - Runs `staticcheck`, install https://staticcheck.io/docs/
+            </li>
+            <li>
+                <code>golangci-lint</code>
+                    - Runs `golangci-lint`, install https://github.com/golangci/golangci-lint
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/dnephin/pre-commit-golang" target="_blank">
+            github.com/dnephin/pre-commit-golang
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>go-fmt</code>
+                    - Runs `gofmt`, requires golang
+            </li>
+            <li>
+                <code>go-imports</code>
+                    - Runs `goimports`, requires golang
+            </li>
+            <li>
+                <code>go-vet</code>
+                    - Runs `go vet`, requires golang
+            </li>
+            <li>
+                <code>go-lint</code>
+                    - Runs `golint`, requires https://github.com/golang/lint
+            </li>
+            <li>
+                <code>go-cyclo</code>
+                    - Runs `gocyclo`, requires https://github.com/fzipp/gocyclo
+            </li>
+            <li>
+                <code>validate-toml</code>
+                    - Runs `tomlv`, requires https://github.com/BurntSushi/toml/tree/master/cmd/tomlv&#34;
+
+            </li>
+            <li>
+                <code>no-go-testing</code>
+                    - Checks that no files are using `testing.T`, if you want developers to use a different testing framework
+
+            </li>
+            <li>
+                <code>gometalinter</code>
+                    - 
+            </li>
+            <li>
+                <code>golangci-lint</code>
+                    - Runs `golangci-lint`, requires https://github.com/golangci/golangci-lint
+            </li>
+            <li>
+                <code>go-critic</code>
+                    - Runs `go-critic`, requires https://github.com/go-critic/go-critic
+            </li>
+            <li>
+                <code>go-unit-tests</code>
+                    - Runs `go test`
+            </li>
+            <li>
+                <code>go-build</code>
+                    - Runs `go build`, requires golang
+            </li>
+            <li>
+                <code>go-mod-tidy</code>
+                    - Runs `go mod tidy -v`, requires golang
+            </li>
+            <li>
+                <code>go-mod-vendor</code>
+                    - Runs `go mod vendor`, requires golang
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/troian/pre-commit-golang" target="_blank">
+            github.com/troian/pre-commit-golang
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>go-fmt</code>
+                    - Runs `gofmt`, requires golang
+            </li>
+            <li>
+                <code>go-imports</code>
+                    - Runs `goimports`, requires golang
+            </li>
+            <li>
+                <code>go-vet</code>
+                    - Runs `go vet`, requires golang
+            </li>
+            <li>
+                <code>go-lint</code>
+                    - Runs `golint`, requires https://github.com/golang/lint
+            </li>
+            <li>
+                <code>go-metalinter</code>
+                    - Runs `gometalinter`, requires https://github.com/alecthomas/gometalinter
+            </li>
+            <li>
+                <code>go-build</code>
+                    - Makes sure Go code can build
+            </li>
+            <li>
+                <code>go-build-plugin</code>
+                    - Makes sure Go code can build package as plugin
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/jstewmon/check-swagger" target="_blank">
+            github.com/jstewmon/check-swagger
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>check-swagger</code>
+                    - Hook to validate swagger specs.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/detailyang/pre-commit-shell" target="_blank">
+            github.com/detailyang/pre-commit-shell
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>shell-lint</code>
+                    - Check Shell Syntax on ALL staged files with user friendly messages and colors
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/bemeurer/beautysh" target="_blank">
+            github.com/bemeurer/beautysh
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>beautysh</code>
+                    - A Bash beautifier for the masses.
+https://pypi.python.org/pypi/beautysh
+
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/antonbabenko/pre-commit-terraform" target="_blank">
+            github.com/antonbabenko/pre-commit-terraform
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>terraform_fmt</code>
+                    - Rewrites all Terraform configuration files to a canonical format.
+            </li>
+            <li>
+                <code>terraform_docs</code>
+                    - Inserts input and output documentation into README.md (using terraform-docs).
+            </li>
+            <li>
+                <code>terraform_docs_without_aggregate_type_defaults</code>
+                    - Inserts input and output documentation into README.md (using terraform-docs). Identical to terraform_docs.
+            </li>
+            <li>
+                <code>terraform_docs_replace</code>
+                    - Overwrite content of README.md with terraform-docs.
+            </li>
+            <li>
+                <code>terraform_validate</code>
+                    - Validates all Terraform configuration files.
+            </li>
+            <li>
+                <code>terraform_tflint</code>
+                    - Validates all Terraform configuration files with TFLint.
+            </li>
+            <li>
+                <code>terragrunt_fmt</code>
+                    - Rewrites all Terragrunt configuration files to a canonical format.
+            </li>
+            <li>
+                <code>terragrunt_validate</code>
+                    - Validates all Terragrunt configuration files.
+            </li>
+            <li>
+                <code>terraform_tfsec</code>
+                    - Static analysis of Terraform templates to spot potential security issues.
+            </li>
+            <li>
+                <code>checkov</code>
+                    - Runs checkov on Terraform templates.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/ansible/ansible-lint" target="_blank">
+            github.com/ansible/ansible-lint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>ansible-lint</code>
+                    - This hook runs ansible-lint.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/doublify/pre-commit-clang-format" target="_blank">
+            github.com/doublify/pre-commit-clang-format
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>clang-format</code>
+                    - Format files with ClangFormat.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/doublify/pre-commit-go" target="_blank">
+            github.com/doublify/pre-commit-go
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>fmt</code>
+                    - Format files with go fmt.
+            </li>
+            <li>
+                <code>vet</code>
+                    - Check files with go vet.
+            </li>
+            <li>
+                <code>fix</code>
+                    - Fix files with go fix.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/doublify/pre-commit-hindent" target="_blank">
+            github.com/doublify/pre-commit-hindent
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>hindent</code>
+                    - Format files with hindent.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/doublify/pre-commit-rust" target="_blank">
+            github.com/doublify/pre-commit-rust
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>fmt</code>
+                    - Format files with cargo fmt.
+            </li>
+            <li>
+                <code>cargo-check</code>
+                    - Check the package for errors.
+            </li>
+            <li>
+                <code>clippy</code>
+                    - Lint rust sources
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/kintoandar/pre-commit" target="_blank">
+            github.com/kintoandar/pre-commit
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>terraform_fmt</code>
+                    - Formats terraform scripts into the correct checkstyle
+            </li>
+            <li>
+                <code>terraform_validate</code>
+                    - Validates terraform scripts syntax
+            </li>
+            <li>
+                <code>prometheus_check_rules</code>
+                    - Validates prometheus rules
+            </li>
+            <li>
+                <code>prometheus_check_config</code>
+                    - Validates prometheus configuration
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/awebdeveloper/pre-commit-stylelint" target="_blank">
+            github.com/awebdeveloper/pre-commit-stylelint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>stylelint</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/awebdeveloper/pre-commit-tslint" target="_blank">
+            github.com/awebdeveloper/pre-commit-tslint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>tslint</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/adrienverge/yamllint" target="_blank">
+            github.com/adrienverge/yamllint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>yamllint</code>
+                    - This hook runs yamllint.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/thlorenz/doctoc" target="_blank">
+            github.com/thlorenz/doctoc
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>doctoc</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/noahsark769/xcodeproj-sort-pre-commit-hook" target="_blank">
+            github.com/noahsark769/xcodeproj-sort-pre-commit-hook
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>xcodeproj-sort</code>
+                    - This hook sorts your .xcodeproj file
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/jorisroovers/gitlint" target="_blank">
+            github.com/jorisroovers/gitlint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>gitlint</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/psf/black" target="_blank">
+            github.com/psf/black
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>black</code>
+                    - Black: The uncompromising Python code formatter
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/IamTheFij/ansible-pre-commit" target="_blank">
+            github.com/IamTheFij/ansible-pre-commit
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>encryption-check</code>
+                    - Checks that vault files are encrypted
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/IamTheFij/docker-pre-commit" target="_blank">
+            github.com/IamTheFij/docker-pre-commit
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>docker-compose-check</code>
+                    - Checks that docker-compose files are valid
+            </li>
+            <li>
+                <code>hadolint</code>
+                    - Runs hadolint Docker image to lint Dockerfiles
+            </li>
+            <li>
+                <code>hadolint-system</code>
+                    - Runs system hadolint to lint Dockerfiles
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/mattlqx/pre-commit-ruby" target="_blank">
+            github.com/mattlqx/pre-commit-ruby
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>rubocop</code>
+                    - Enforce Ruby style guide with rubocop
+            </li>
+            <li>
+                <code>rspec</code>
+                    - Run rspec in changed paths with spec directories
+            </li>
+            <li>
+                <code>foodcritic</code>
+                    - Enforce Chef style guide with foodcritic
+            </li>
+            <li>
+                <code>cookstyle</code>
+                    - Enforce Chef style guide with cookstyle
+            </li>
+            <li>
+                <code>chef-cookbook-version</code>
+                    - Ensure Chef cookbook versions are bumped when contents are changed
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/mattlqx/pre-commit-sign" target="_blank">
+            github.com/mattlqx/pre-commit-sign
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>sign-commit</code>
+                    - Hashes some fields of the commit and adds a signature for verification by other systems
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/mattlqx/pre-commit-search-and-replace" target="_blank">
+            github.com/mattlqx/pre-commit-search-and-replace
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>search-and-replace</code>
+                    - Search and replace strings
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pryorda/dockerfilelint-precommit-hooks" target="_blank">
+            github.com/pryorda/dockerfilelint-precommit-hooks
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>dockerfilelint</code>
+                    - Dockerfile linter
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/alessandrojcm/commitlint-pre-commit-hook" target="_blank">
+            github.com/alessandrojcm/commitlint-pre-commit-hook
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>commitlint</code>
+                    - Commitlint hook
+            </li>
+            <li>
+                <code>commitlint-travis</code>
+                    - Lint all relevant commits for a change or PR on Travis CI
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/henryykt/pre-commit-perl" target="_blank">
+            github.com/henryykt/pre-commit-perl
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>perlcritic</code>
+                    - Runs `perlcritic`, requires script in PATH
+            </li>
+            <li>
+                <code>perltidy</code>
+                    - Runs `perltidy`, requires script in PATH
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/juancarlospaco/pre-commit-nim" target="_blank">
+            github.com/juancarlospaco/pre-commit-nim
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>nimble-check</code>
+                    - nimble check
+            </li>
+            <li>
+                <code>nim-check</code>
+                    - nim check
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/awslabs/cfn-python-lint" target="_blank">
+            github.com/awslabs/cfn-python-lint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>cfn-python-lint</code>
+                    - AWS CloudFormation Linter
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/thoughtworks/talisman" target="_blank">
+            github.com/thoughtworks/talisman
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>talisman-commit</code>
+                    - talisman
+            </li>
+            <li>
+                <code>talisman-push</code>
+                    - talisman
+            </li>
+    </ul>
+    <h3>
+        <a href="https://gitlab.com/PyCQA/flake8" target="_blank">
+            gitlab.com/PyCQA/flake8
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>flake8</code>
+                    - `flake8` is a command-line utility for enforcing style consistency across Python projects.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/PyCQA/bandit" target="_blank">
+            github.com/PyCQA/bandit
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>bandit</code>
+                    - Bandit is a tool for finding common security issues in Python code
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/PyCQA/pydocstyle" target="_blank">
+            github.com/PyCQA/pydocstyle
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>pydocstyle</code>
+                    - pydocstyle is a static analysis tool for checking compliance with Python docstring conventions.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/PyCQA/pylint" target="_blank">
+            github.com/PyCQA/pylint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>pylint</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/PyCQA/doc8" target="_blank">
+            github.com/PyCQA/doc8
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>doc8</code>
+                    - This hook runs doc8 for linting docs
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/PyCQA/prospector" target="_blank">
+            github.com/PyCQA/prospector
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>prospector</code>
+                    - Analyze Python code using Prospector
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/miki725/importanize" target="_blank">
+            github.com/miki725/importanize
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>importanize</code>
+                    - Organize python imports
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/motet-a/jinjalint" target="_blank">
+            github.com/motet-a/jinjalint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>jinjalint</code>
+                    - A linter which checks the indentation and the correctness of Jinja-like/HTML templates.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/milin/giticket" target="_blank">
+            github.com/milin/giticket
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>giticket</code>
+                    - Utility to prepend your commits with info from your branch.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/milin/gitown" target="_blank">
+            github.com/milin/gitown
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>gitown</code>
+                    - Keep your CODEOWNERS file up to date to streamline code review process.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/sqlalchemyorg/zimports" target="_blank">
+            github.com/sqlalchemyorg/zimports
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>zimports</code>
+                    - Python import rewriter
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/peterdemin/pip-compile-multi" target="_blank">
+            github.com/peterdemin/pip-compile-multi
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>pip-compile-multi-verify</code>
+                    - pip-compile-multi verify
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/homebysix/pre-commit-macadmin" target="_blank">
+            github.com/homebysix/pre-commit-macadmin
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>check-autopkg-recipe-list</code>
+                    - This hook checks AutoPkg recipe lists (in txt, plist, yaml, or json format) for common issues.
+            </li>
+            <li>
+                <code>check-autopkg-recipes</code>
+                    - This hook checks AutoPkg recipes to ensure they contain required top-level keys.
+            </li>
+            <li>
+                <code>check-git-config-email</code>
+                    - This hook checks to ensure the Git config email matches one of the specified domains.
+            </li>
+            <li>
+                <code>check-jamf-extension-attributes</code>
+                    - This hook checks Jamf extension attributes for common issues.
+            </li>
+            <li>
+                <code>check-jamf-scripts</code>
+                    - This hook checks Jamf scripts for common issues.
+            </li>
+            <li>
+                <code>check-jamf-profiles</code>
+                    - This hook checks Jamf profiles for common issues.
+            </li>
+            <li>
+                <code>check-munki-pkgsinfo</code>
+                    - This hook checks Munki pkginfo files to ensure they are valid.
+            </li>
+            <li>
+                <code>check-munkiadmin-scripts</code>
+                    - This hook ensures MunkiAdmin scripts are executable.
+            </li>
+            <li>
+                <code>check-munkipkg-buildinfo</code>
+                    - This hook checks MunkiPkg build-info files to ensure they are valid.
+            </li>
+            <li>
+                <code>check-outset-scripts</code>
+                    - This hook checks Outset scripts to ensure they&#39;re executable.
+            </li>
+            <li>
+                <code>check-plists</code>
+                    - This hook checks XML property list (plist) files for basic syntax errors.
+            </li>
+            <li>
+                <code>forbid-autopkg-overrides</code>
+                    - This hook prevents AutoPkg overrides from being added to the repo.
+            </li>
+            <li>
+                <code>forbid-autopkg-trust-info</code>
+                    - This hook prevents AutoPkg recipes with trust info from being added to the repo.
+            </li>
+            <li>
+                <code>munki-makecatalogs</code>
+                    - This hook runs the &#34;makecatalogs&#34; command to ensure all referenced packages are present and catalogs are up to date.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/fortman/pre-commit-prometheus" target="_blank">
+            github.com/fortman/pre-commit-prometheus
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>check-config</code>
+                    - Check prometheus config files
+            </li>
+            <li>
+                <code>check-rules</code>
+                    - Check prometheus rule files
+            </li>
+            <li>
+                <code>test-rules</code>
+                    - Unit test prometheus rule files
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/syntaqx/git-hooks" target="_blank">
+            github.com/syntaqx/git-hooks
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>circleci-config-validate</code>
+                    - Test if the CircleCI config is well formed.
+            </li>
+            <li>
+                <code>go-fmt</code>
+                    - Runs `go fmt` and asserts no changes are needed.
+            </li>
+            <li>
+                <code>go-test</code>
+                    - Runs `go test` and asserts no tests are failing.
+            </li>
+            <li>
+                <code>go-mod-tidy</code>
+                    - Runs `go mod tidy` to ensure `go.mod` matches the project source.
+            </li>
+            <li>
+                <code>go-generate</code>
+                    - Runs `go generate` against the projects go files.
+            </li>
+            <li>
+                <code>forbid-binary</code>
+                    - Forbid binary files from being committed
+            </li>
+            <li>
+                <code>shellcheck</code>
+                    - Shell scripts conform to shellcheck
+            </li>
+            <li>
+                <code>shfmt</code>
+                    - Check shell style with shfmt
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/Calinou/pre-commit-luacheck" target="_blank">
+            github.com/Calinou/pre-commit-luacheck
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>luacheck</code>
+                    - Lints Lua files using Luacheck.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/belminf/pre-commit-chef" target="_blank">
+            github.com/belminf/pre-commit-chef
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>cookstyle</code>
+                    - Chef-specific Rubocop linting with Cookstyle
+            </li>
+            <li>
+                <code>foodcritic</code>
+                    - Chef cookbook linting with Foodcritic
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/PyCQA/isort" target="_blank">
+            github.com/PyCQA/isort
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>isort</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pocc/pre-commit-hooks" target="_blank">
+            github.com/pocc/pre-commit-hooks
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>clang-format</code>
+                    - Formats C/CPP code
+            </li>
+            <li>
+                <code>clang-tidy</code>
+                    - Find warnings/errors in C/CPP code
+            </li>
+            <li>
+                <code>oclint</code>
+                    - Find warnings/errors in C/CPP code
+            </li>
+            <li>
+                <code>uncrustify</code>
+                    - Formats C/CPP code
+            </li>
+            <li>
+                <code>cppcheck</code>
+                    - Find warnings/errors in C/CPP code
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/dwightgunning/pre-commit-nglint" target="_blank">
+            github.com/dwightgunning/pre-commit-nglint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>nglint</code>
+                    - Runs ng lint
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/codespell-project/codespell" target="_blank">
+            github.com/codespell-project/codespell
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>codespell</code>
+                    - Checks for common misspellings in text files.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://gitlab.com/smop/pre-commit-hooks" target="_blank">
+            gitlab.com/smop/pre-commit-hooks
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>check-poetry</code>
+                    - Validates the structure of the pyproject.toml file
+            </li>
+            <li>
+                <code>check-gitlab-ci</code>
+                    - Validates .gitlab-ci.yml file
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/seddonym/import-linter" target="_blank">
+            github.com/seddonym/import-linter
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>import-linter</code>
+                    - Import Linter allows you to define and enforce rules for the internal and external imports within your Python project.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/marco-c/taskcluster_yml_validator" target="_blank">
+            github.com/marco-c/taskcluster_yml_validator
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>taskcluster_yml</code>
+                    - Checks for validity of .taskcluster.yml file.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/myint/docformatter" target="_blank">
+            github.com/myint/docformatter
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>docformatter</code>
+                    - Formats docstrings to follow PEP 257.
+            </li>
+            <li>
+                <code>docformatter-venv</code>
+                    - Formats docstrings to follow PEP 257. Uses python3 -m venv.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/myint/rstcheck" target="_blank">
+            github.com/myint/rstcheck
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>rstcheck</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/myint/autoflake" target="_blank">
+            github.com/myint/autoflake
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>autoflake</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/lorenzwalthert/precommit" target="_blank">
+            github.com/lorenzwalthert/precommit
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>roxygenize</code>
+                    - run roxygen2::roxygenize()
+            </li>
+            <li>
+                <code>use-tidy-description</code>
+                    - run usethis::use_tidy_description()
+            </li>
+            <li>
+                <code>style-files</code>
+                    - style files with styler
+            </li>
+            <li>
+                <code>no-browser-statement</code>
+                    - check if a .R file contains a `browser()` statement
+            </li>
+            <li>
+                <code>parsable-R</code>
+                    - check if a .R file is parsable
+            </li>
+            <li>
+                <code>readme-rmd-rendered</code>
+                    - make sure README.Rmd hasn&#39;t been edited more recently than README.md
+            </li>
+            <li>
+                <code>codemeta-description-updated</code>
+                    - make sure codemeta.json is in sync with DESCRIPTION. It should be run after use-tidy-description.
+            </li>
+            <li>
+                <code>spell-check</code>
+                    - perform a spell check with spelling::spell_check_files()
+            </li>
+            <li>
+                <code>deps-in-desc</code>
+                    - Check if dependencies that can be parsed from code are in DESCRIPTION.
+            </li>
+            <li>
+                <code>lintr</code>
+                    - check if a .R file is lint free (using lintr)
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/FelixSeptem/pre-commit-golang" target="_blank">
+            github.com/FelixSeptem/pre-commit-golang
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>bazel-buildifier</code>
+                    - Runs `buildifier`, requires bazel buildifier
+            </li>
+            <li>
+                <code>go-imports</code>
+                    - Runs `go imports`, requires golang
+            </li>
+            <li>
+                <code>go-critic</code>
+                    - Runs `go-critic`, requires go-critic
+            </li>
+            <li>
+                <code>golangci-lint</code>
+                    - Runs `golangci-lint`, requires golangci-lint
+            </li>
+            <li>
+                <code>golangci-lint-conf</code>
+                    - Runs `golangci-lint` read local config file, requires golangci-lint
+            </li>
+            <li>
+                <code>go-mod-tidy</code>
+                    - Runs `go mod tidy` make sure latest and avaliable go mod file
+            </li>
+    </ul>
+    <h3>
+        <a href="https://gitlab.com/daverona/pre-commit/cpp" target="_blank">
+            gitlab.com/daverona/pre-commit/cpp
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>clang-format</code>
+                    - Run `clang-format` against C/C++ header and source files
+            </li>
+            <li>
+                <code>cpplint</code>
+                    - Run `cpplint` against C/C++ header and source files
+            </li>
+            <li>
+                <code>cppcheck</code>
+                    - Run `cppcheck` against C/C++ source files
+            </li>
+            <li>
+                <code>docker-clang-format</code>
+                    - Run `clang-format` against C/C++ header and source files in Docker container
+            </li>
+            <li>
+                <code>docker-cpplint</code>
+                    - Run `cpplint` against C/C++ header and source files in Docker container
+            </li>
+            <li>
+                <code>docker-cppcheck</code>
+                    - Run `cppcheck` against C/C++ source files in Docker container
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/codingjoe/relint" target="_blank">
+            github.com/codingjoe/relint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>relint</code>
+                    - Write your own linting rules using regular expressions.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/nix-community/nixpkgs-fmt" target="_blank">
+            github.com/nix-community/nixpkgs-fmt
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>nixpkgs-fmt</code>
+                    - Format nix code with nixpkgs-fmt.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/d6e/beancount-check" target="_blank">
+            github.com/d6e/beancount-check
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>beancount-check</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://gitlab.com/iamlikeme/nbhooks" target="_blank">
+            gitlab.com/iamlikeme/nbhooks
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>nb-ensure-clean</code>
+                    - Ensure that committed Jupyter notebooks contain no outputs.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/Kuniwak/vint" target="_blank">
+            github.com/Kuniwak/vint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>vint</code>
+                    - Lints all vim files
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/eschulte/lisp-format" target="_blank">
+            github.com/eschulte/lisp-format
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>lisp-format</code>
+                    - Run lisp-format against lisp files
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/shellcheck-py/shellcheck-py" target="_blank">
+            github.com/shellcheck-py/shellcheck-py
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>shellcheck</code>
+                    - Test shell scripts with shellcheck
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/APIDevTools/swagger-cli" target="_blank">
+            github.com/APIDevTools/swagger-cli
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>swagger-validation</code>
+                    - Hook to validate swagger specs.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/kynan/nbstripout" target="_blank">
+            github.com/kynan/nbstripout
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>nbstripout</code>
+                    - nbstripout: strip output from Jupyter and IPython notebooks
+            </li>
+    </ul>
+    <h3>
+        <a href="https://gitlab.com/devopshq/gitlab-ci-linter" target="_blank">
+            gitlab.com/devopshq/gitlab-ci-linter
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>gitlab-ci-linter</code>
+                    - Validates .gitlab-ci.yml file (pure-python version without dependencies)
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/bmorcos/pre-commit-hooks-cpp" target="_blank">
+            github.com/bmorcos/pre-commit-hooks-cpp
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>clang-format</code>
+                    - Format C code using clang-format.
+            </li>
+            <li>
+                <code>cpplint</code>
+                    - Check style of C code using cpplint.
+            </li>
+            <li>
+                <code>cppcheck</code>
+                    - Check correctness of C code using cppcheck.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/igorshubovych/markdownlint-cli" target="_blank">
+            github.com/igorshubovych/markdownlint-cli
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>markdownlint</code>
+                    - Checks the style of Markdown/Commonmark files.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/TekWizely/pre-commit-golang" target="_blank">
+            github.com/TekWizely/pre-commit-golang
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>go-build-mod</code>
+                    - Run &#39;cd $(mod_root $FILE); go build -o /dev/null [$ARGS] ./...&#39; for each staged .go file
+            </li>
+            <li>
+                <code>go-build-pkg</code>
+                    - Run &#39;go build -o /dev/null [$ARGS] ./$(dirname $FILE)&#39; for each staged .go file
+            </li>
+            <li>
+                <code>go-build-repo-mod</code>
+                    - Run &#39;cd $(mod_root); go build -o /dev/null [$ARGS] ./...&#39; for each module in the repo
+            </li>
+            <li>
+                <code>go-build-repo-pkg</code>
+                    - Run &#39;go build -o /dev/null [$ARGS] ./...&#39; in repo root folder
+            </li>
+            <li>
+                <code>go-critic</code>
+                    - Run &#39;gocritic check [$ARGS] $FILE&#39; for each staged .go file
+            </li>
+            <li>
+                <code>go-fmt</code>
+                    - Run &#39;gofmt -l -d [$ARGS] $FILE&#39; for each staged .go file
+            </li>
+            <li>
+                <code>go-imports</code>
+                    - Run &#39;goimports -l -d [$ARGS] $FILE&#39; for each staged .go file
+            </li>
+            <li>
+                <code>go-lint</code>
+                    - Run &#39;golint -set_exit_status [$ARGS] $FILE&#39; for each staged .go file
+            </li>
+            <li>
+                <code>go-returns</code>
+                    - Run &#39;goreturns -l -d [$ARGS] $FILE&#39; for each staged .go file
+            </li>
+            <li>
+                <code>go-test-mod</code>
+                    - Run &#39;cd $(mod_root $FILE); go test [$ARGS] ./...&#39; for each staged .go file
+            </li>
+            <li>
+                <code>go-test-pkg</code>
+                    - Run &#39;go test [$ARGS] ./$(dirname $FILE)&#39; for each staged .go file
+            </li>
+            <li>
+                <code>go-test-repo-mod</code>
+                    - Run &#39;cd $(mod_root); go test [$ARGS] ./...&#39; for each module in the repo
+            </li>
+            <li>
+                <code>go-test-repo-pkg</code>
+                    - Run &#39;go test [$ARGS] ./...&#39; in repo root folder
+            </li>
+            <li>
+                <code>go-vet-mod</code>
+                    - Run &#39;cd $(mod_root $FILE); go vet [$ARGS] ./...&#39; for each staged .go file
+            </li>
+            <li>
+                <code>go-vet-pkg</code>
+                    - Run &#39;go vet [$ARGS] ./$(dirname $FILE)&#39; for each staged .go file
+            </li>
+            <li>
+                <code>go-vet-repo-mod</code>
+                    - Run &#39;cd $(mod_root); go vet [$ARGS] ./...&#39; for each module in the repo
+            </li>
+            <li>
+                <code>go-vet-repo-pkg</code>
+                    - Run &#39;go vet [$ARGS] ./...&#39; in repo root folder
+            </li>
+            <li>
+                <code>go-vet</code>
+                    - Run &#39;go vet [$ARGS] $FILE&#39; for each staged .go file
+            </li>
+            <li>
+                <code>golangci-lint-mod</code>
+                    - Run &#39;cd $(mod_root $FILE); golangci-lint run [$ARGS] ./...&#39; for each staged .go file
+            </li>
+            <li>
+                <code>golangci-lint-pkg</code>
+                    - Run &#39;golangci-lint run [$ARGS] ./$(dirname $FILE)&#39; for each staged .go file
+            </li>
+            <li>
+                <code>golangci-lint-repo-mod</code>
+                    - Run &#39;cd $(mod_root); golangci-lint run [$ARGS] ./...&#39; for each module in the repo
+            </li>
+            <li>
+                <code>golangci-lint-repo-pkg</code>
+                    - Run &#39;golangci-lint run [$ARGS] ./...&#39; in repo root folder
+            </li>
+            <li>
+                <code>golangci-lint</code>
+                    - Run &#39;golangci-lint run [$ARGS] $FILE&#39; for each staged .go file
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/markdownlint/markdownlint" target="_blank">
+            github.com/markdownlint/markdownlint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>markdownlint</code>
+                    - Run markdownlint on your Markdown files
+            </li>
+            <li>
+                <code>markdownlint_docker</code>
+                    - Run markdown lint on your Markdown files using the project docker image
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/jguttman94/pre-commit-gradle" target="_blank">
+            github.com/jguttman94/pre-commit-gradle
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>gradle-check</code>
+                    - Runs java unit tests using gradle check
+            </li>
+            <li>
+                <code>gradle-build</code>
+                    - Builds java project using &#34;gradle build&#34;
+            </li>
+            <li>
+                <code>gradle-spotless</code>
+                    - Lints java project using &#34;gradle spotlessJavaCheck spotlessJavaApply&#34;
+            </li>
+            <li>
+                <code>gradle-task</code>
+                    - Runs arbitrary gradle tasks for java project
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/Yelp/detect-secrets" target="_blank">
+            github.com/Yelp/detect-secrets
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>detect-secrets</code>
+                    - Detects high entropy strings that are likely to be passwords.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/dmitri-lerko/pre-commit-docker-kustomize" target="_blank">
+            github.com/dmitri-lerko/pre-commit-docker-kustomize
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>kustomize</code>
+                    - kustomize provided by docker
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/perltidy/perltidy" target="_blank">
+            github.com/perltidy/perltidy
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>perltidy</code>
+                    - Run the perltidy source code formatter on Perl source files
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/talos-systems/conform" target="_blank">
+            github.com/talos-systems/conform
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>conform</code>
+                    - Run &#39;conform enforce&#39; for policy enforcement
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/twu/skjold" target="_blank">
+            github.com/twu/skjold
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>skjold</code>
+                    - Security audit Python project dependencies against security advisory databases.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/woile/commitizen" target="_blank">
+            github.com/woile/commitizen
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>commitizen</code>
+                    - Check whether the commit message follows commiting rules
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/gherynos/pre-commit-java" target="_blank">
+            github.com/gherynos/pre-commit-java
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>pmd</code>
+                    - Runs the PMD static code analyzer.
+            </li>
+            <li>
+                <code>cpd</code>
+                    - Runs the Copy/Paste Detector (CPD).
+            </li>
+            <li>
+                <code>checkstyle</code>
+                    - Runs the Checkstyle static code analysis tool.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/lietu/go-pre-commit" target="_blank">
+            github.com/lietu/go-pre-commit
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>errcheck</code>
+                    - Check your Go source code with errcheck
+            </li>
+            <li>
+                <code>go-fmt-goimports</code>
+                    - Format your Go code with go fmt and goimports
+            </li>
+            <li>
+                <code>go-test</code>
+                    - Run your Go unit tests
+            </li>
+            <li>
+                <code>go-vet</code>
+                    - Check your Go source with go vet
+            </li>
+            <li>
+                <code>gofumports</code>
+                    - Format your Go code with gofumports
+            </li>
+            <li>
+                <code>gofumpt</code>
+                    - Format your Go code with gofumpt
+            </li>
+            <li>
+                <code>golangci-lint</code>
+                    - Check your Go code with golangci-lint
+            </li>
+            <li>
+                <code>golint</code>
+                    - Check your Go code with golint
+            </li>
+            <li>
+                <code>staticcheck</code>
+                    - Check your Go code with staticcheck
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/macisamuele/language-formatters-pre-commit-hooks" target="_blank">
+            github.com/macisamuele/language-formatters-pre-commit-hooks
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>pretty-format-golang</code>
+                    - Runs gofmt over golang source files.
+            </li>
+            <li>
+                <code>pretty-format-ini</code>
+                    - This hook sets a standard for formatting INI  files.
+            </li>
+            <li>
+                <code>pretty-format-java</code>
+                    - Runs Google Java Formatter over Java source files
+            </li>
+            <li>
+                <code>pretty-format-kotlin</code>
+                    - Runs KTLint over Kotlin source files
+            </li>
+            <li>
+                <code>pretty-format-rust</code>
+                    - Runs cargo fmt over Rust source files
+            </li>
+            <li>
+                <code>pretty-format-toml</code>
+                    - This hook sets a standard for formatting TOML files.
+            </li>
+            <li>
+                <code>pretty-format-yaml</code>
+                    - This hook sets a standard for formatting YAML files.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/jlebar/pre-commit-hooks" target="_blank">
+            github.com/jlebar/pre-commit-hooks
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>bazel-buildifier</code>
+                    - Runs `buildifier`, requires buildifier binary
+            </li>
+            <li>
+                <code>do-not-submit</code>
+                    - Forbids the string &#34;DO NOT SUBMIT&#34;.
+            </li>
+            <li>
+                <code>clang-format-diff</code>
+            </li>
+            <li>
+                <code>clang-format-whole-file</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/jazzband/pip-tools" target="_blank">
+            github.com/jazzband/pip-tools
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>pip-compile</code>
+                    - Automatically compile requirements.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/pappasam/toml-sort" target="_blank">
+            github.com/pappasam/toml-sort
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>toml-sort</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/arenadotio/pre-commit-ocamlformat" target="_blank">
+            github.com/arenadotio/pre-commit-ocamlformat
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>ocamlformat</code>
+                    - Auto-formatter for OCaml code
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/hcodes/yaspeller" target="_blank">
+            github.com/hcodes/yaspeller
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>yaspeller</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/maltzj/google-style-precommit-hook" target="_blank">
+            github.com/maltzj/google-style-precommit-hook
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>google-style-java</code>
+                    - Formats code in Google&#39;s Java codestyle.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/jvstein/pre-commit-dotnet-format" target="_blank">
+            github.com/jvstein/pre-commit-dotnet-format
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>dotnet-format</code>
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/PeterMosmans/jenkinslint" target="_blank">
+            github.com/PeterMosmans/jenkinslint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>jenkinslint</code>
+                    - Validates Jenkinsfiles using a Jenkins server
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/nicklockwood/SwiftFormat" target="_blank">
+            github.com/nicklockwood/SwiftFormat
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>swiftformat</code>
+                    - Check swift files for formating issues with SwiftFormat
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/executablebooks/mdformat" target="_blank">
+            github.com/executablebooks/mdformat
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>mdformat</code>
+                    - CommonMark compliant Markdown formatter
+            </li>
+    </ul>
+    <h3>
+        <a href="https://gitlab.com/daverona/pre-commit/php" target="_blank">
+            gitlab.com/daverona/pre-commit/php
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>phpmd</code>
+                    - Run `phpmd` to find possible bugs, suboptimal code, overcomplicated expressions, and so on
+            </li>
+            <li>
+                <code>docker-phpmd</code>
+                    - Run `phpmd` to find possible bugs, suboptimal code, overcomplicated expressions, and so on
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/anderseknert/pre-commit-opa" target="_blank">
+            github.com/anderseknert/pre-commit-opa
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>opa-test</code>
+                    - Runs OPA unit tests on rego source files
+            </li>
+            <li>
+                <code>opa-fmt</code>
+                    - Formats Rego policy using opa fmt
+            </li>
+            <li>
+                <code>opa-check</code>
+                    - Check syntax of staged Rego files
+            </li>
+            <li>
+                <code>conftest-test</code>
+                    - Run `conftest test` on staged config files
+            </li>
+            <li>
+                <code>conftest-verify</code>
+                    - Run `conftest verify` on rego files
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/radix-ai/auto-smart-commit" target="_blank">
+            github.com/radix-ai/auto-smart-commit
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>auto-smart-commit</code>
+                    - Automatically transform your Git commit messages into Jira smart commits
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/thibaudcolas/curlylint" target="_blank">
+            github.com/thibaudcolas/curlylint
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>curlylint</code>
+                    - A linter which checks the indentation and the correctness of Jinja-like/HTML templates.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/cheshirekow/cmake-format-precommit" target="_blank">
+            github.com/cheshirekow/cmake-format-precommit
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>cmake-format</code>
+                    - cmake-format can format your listfiles nicely so that they don&#39;t look like crap.
+            </li>
+            <li>
+                <code>cmake-lint</code>
+                    - cmake-lint will check your listfiles for style violations, common mistakes, and anti-patterns.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/aorumbayev/pydantic-to-schema" target="_blank">
+            github.com/aorumbayev/pydantic-to-schema
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>pydantic-to-schema</code>
+                    - Converts models from input path to output path as schemas
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/hadialqattan/pycln" target="_blank">
+            github.com/hadialqattan/pycln
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>pycln</code>
+                    - A formatter for finding and removing unused import statements.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/nbQA-dev/nbQA" target="_blank">
+            github.com/nbQA-dev/nbQA
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>nbqa</code>
+                    - Run any standard Python code quality tool on a Jupyter Notebook
+            </li>
+            <li>
+                <code>nbqa-autoflake</code>
+                    - Run &#39;autoflake&#39; on a Jupyter Notebook
+            </li>
+            <li>
+                <code>nbqa-black</code>
+                    - Run &#39;black&#39; on a Jupyter Notebook
+            </li>
+            <li>
+                <code>nbqa-check-ast</code>
+                    - Run &#39;check-ast&#39; on a Jupyter Notebook
+            </li>
+            <li>
+                <code>nbqa-flake8</code>
+                    - Run &#39;flake8&#39; on a Jupyter Notebook
+            </li>
+            <li>
+                <code>nbqa-isort</code>
+                    - Run &#39;isort&#39; on a Jupyter Notebook
+            </li>
+            <li>
+                <code>nbqa-mypy</code>
+                    - Run &#39;mypy&#39; on a Jupyter Notebook
+            </li>
+            <li>
+                <code>nbqa-pylint</code>
+                    - Run &#39;pylint&#39; on a Jupyter Notebook
+            </li>
+            <li>
+                <code>nbqa-pyupgrade</code>
+                    - Run &#39;pyupgrade&#39; on a Jupyter Notebook
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/Scony/godot-gdscript-toolkit" target="_blank">
+            github.com/Scony/godot-gdscript-toolkit
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>gdlint</code>
+                    - gdlint - linter for GDScript
+            </li>
+            <li>
+                <code>gdformat</code>
+                    - gdformat - formater for GDScript
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/avilaton/add-msg-issue-prefix-hook" target="_blank">
+            github.com/avilaton/add-msg-issue-prefix-hook
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>add-msg-issue-prefix</code>
+                    - Searches the branch name for something looking like a jira issue name and prepends the commit message with it
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/dustinsand/pre-commit-jvm" target="_blank">
+            github.com/dustinsand/pre-commit-jvm
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>detekt</code>
+                    - Runs the Detekt static code analyzer on Kotlin source files.
+            </li>
+            <li>
+                <code>google-java-formatter-jdk8</code>
+                    - Runs the Google Java Formatter on Java source files. Minimum supported runtime version is JDK 8.
+            </li>
+            <li>
+                <code>google-java-formatter-jdk11</code>
+                    - Runs the Google Java Formatter on Java source files. Minimum supported runtime version is JDK 11.
+            </li>
+            <li>
+                <code>ktlint</code>
+                    - Runs the ktlint linter and formatter on Kotlin source files.
+            </li>
+            <li>
+                <code>pmd</code>
+                    - Runs the PMD static code analyzer on Java source files.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/alan-turing-institute/CleverCSV-pre-commit" target="_blank">
+            github.com/alan-turing-institute/CleverCSV-pre-commit
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>clevercsv-standardize</code>
+                    - CleverCSV Standardize
+            </li>
+    </ul>
+    <h3>
+        <a href="https://gitlab.com/jvenom/elixir-pre-commit-hooks" target="_blank">
+            gitlab.com/jvenom/elixir-pre-commit-hooks
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>mix-format</code>
+                    - Formats Elixir files with mix format.
+            </li>
+            <li>
+                <code>mix-test</code>
+                    - Runs Elixir tests with mix test.
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/Cretezy/flutter-format-pre-commit" target="_blank">
+            github.com/Cretezy/flutter-format-pre-commit
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>flutter-format</code>
+                    - Format Flutter Code
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/dluksza/flutter-analyze-pre-commit" target="_blank">
+            github.com/dluksza/flutter-analyze-pre-commit
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>flutter-analyze</code>
+                    - Flutter Code Analyze
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/fluttercommunity/import_sorter" target="_blank">
+            github.com/fluttercommunity/import_sorter
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>dart-import-sorter</code>
+                    - Dart package to automatically organize your dart imports. Any dart project supported!    
+Will sort imports alphabetically and then group them in the following order:
+1. Dart imports
+2. Flutter imports
+3. Package imports
+4. Project imports
+
+            </li>
+            <li>
+                <code>flutter-import-sorter</code>
+                    - Dart package to automatically organize your dart imports. Any dart project supported!    
+Will sort imports alphabetically and then group them in the following order:
+1. Dart imports
+2. Flutter imports
+3. Package imports
+4. Project imports
+
+            </li>
+    </ul>
+    <h3>
+        <a href="https://github.com/editorconfig-checker/editorconfig-checker.python" target="_blank">
+            github.com/editorconfig-checker/editorconfig-checker.python
+        </a>
+    </h3>
+    <ul>
+            <li>
+                <code>editorconfig-checker</code>
+                    - `editorconfig-checker` is a tool to check if your files consider your .editorconfig-rules.
+            </li>
+    </ul>
+
+        </div>
+        <footer class="pc-footer"><div class="container"></div></footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-104682927-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <script src="assets/copyable.js"></script>
+    </body>
+</html>
